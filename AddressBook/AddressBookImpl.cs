@@ -6,8 +6,9 @@ namespace AddressBook
 {
     class AddressBookImpl : IAddressBook
     {
+        Person person = null;
 
-        LinkedList<Person> list = new LinkedList<Person>();
+        List<Person> list = new List<Person>();
 
         public void add()
         {
@@ -27,13 +28,49 @@ namespace AddressBook
             Console.WriteLine("Enter your phone number");
             string phoneNumber = Console.ReadLine();
             Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
-            list.AddFirst(person);
+            list.Add(person);
         }
         public void display()
         {
             foreach (Person p in list)
             {
                 Console.WriteLine(p);
+            }
+        }
+        public void edit(String firstName)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].getFirstName().Equals(firstName))
+                {
+
+                    Person person = list[i];
+                    Console.WriteLine(person);
+
+                    Console.WriteLine("enter new last name");
+                    String lastName = Console.ReadLine();
+                    person.setLastName(lastName);
+
+                    Console.WriteLine("enter new address");
+                    String address = Console.ReadLine();
+                    person.setAddress(address);
+
+                    Console.WriteLine("enter new city");
+                    String city = Console.ReadLine();
+                    person.setCity(city);
+
+                    Console.WriteLine("enter new state");
+                    String state = Console.ReadLine();
+                    person.setState(state);
+
+                    Console.WriteLine("enter new phoneNo");
+                    String phoneNo = Console.ReadLine();
+                    person.setMobileNo(phoneNo);
+
+                    Console.WriteLine("enter new zipCode");
+                    String zipCode = Console.ReadLine();
+                    person.setZipcode(zipCode);
+                }
             }
         }
     }
