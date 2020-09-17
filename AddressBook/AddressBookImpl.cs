@@ -30,6 +30,12 @@ namespace AddressBook
             Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
             list.Add(person);
         }
+
+        public void delete(string firstName)
+        {
+            throw new NotImplementedException();
+        }
+
         public void display()
         {
             foreach (Person p in list)
@@ -72,6 +78,17 @@ namespace AddressBook
                     person.setZipcode(zipCode);
                 }
             }
+        }
+        public void deletePerson(String firstName)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].getFirstName().Equals(firstName))
+                {
+                    list.Remove(person);
+                }
+            }
+
         }
     }
 }

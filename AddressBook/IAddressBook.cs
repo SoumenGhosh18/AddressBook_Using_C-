@@ -9,5 +9,7 @@ namespace AddressBook
         public void add();
         public void display();
         public void edit(String firstName);
+        public void deletePerson(String firstName);
+
     }
 }
