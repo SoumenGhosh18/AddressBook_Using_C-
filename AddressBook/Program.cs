@@ -6,23 +6,29 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Welcome To AddressBook Management");
-            //String fname, lname, address, city, state, zip, phone;
-            Console.WriteLine("Enter First Name");
-            string firstName = Console.ReadLine();
-            Console.WriteLine(firstName);
-            Console.WriteLine("Enter Last Name");
-            string lastName = Console.ReadLine();
-            Console.WriteLine("Enter Address");
-            string address = Console.ReadLine();
-            Console.WriteLine("Enter City");
-            string city = Console.ReadLine();
-            Console.WriteLine("Enter State");
-            string state = Console.ReadLine();
-            Console.WriteLine("Enter Zip");
-            string zip = Console.ReadLine();
-            Console.WriteLine("Enter phone number");
-            string phoneNumber = Console.ReadLine();
+            Console.WriteLine("Welcome To AddressBook Management program.....");
+            {
+                IAddressBook book = new AddressBookImpl();
+                Boolean check = true;
+                while (check == true)
+                {
+                    Console.WriteLine("1.ADD 2.Display");
+                    String option = Console.ReadLine();
+                    int option1 = Convert.ToInt32(option);
+
+                    if (option1 == 1)
+                    {
+                        book.add();
+                    }
+
+                    else if (option1 == 2)
+                        book.display();
+
+                    else
+                        check = false;
+                }
+
+            }
         }
     }
 }
