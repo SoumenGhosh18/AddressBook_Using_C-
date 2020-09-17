@@ -12,7 +12,7 @@ namespace AddressBook
                 Boolean check = true;
                 while (check == true)
                 {
-                    Console.WriteLine("1.Add person 2.Display person 3. Edit person 4.Delete person");
+                    Console.WriteLine("1.Add person 2.Display person 3. Edit person 4.Delete person 5.Add multiple person");
                     String read = Console.ReadLine();
                    int option = Convert.ToInt32(read);
 
@@ -35,6 +35,13 @@ namespace AddressBook
                         String firstname = Console.ReadLine();
                         book.deletePerson(firstname);
                     }
+                    else if (option == 5)
+                    {
+                        Console.WriteLine("Enter your first name");
+                        String firstname = Console.ReadLine();
+                        book.addMultiplePerson();
+                    }
+
 
                     else
                         check = false;

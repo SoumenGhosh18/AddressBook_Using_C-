@@ -90,5 +90,17 @@ namespace AddressBook
             }
 
         }
+        public void addMultiplePerson()
+        {
+            Console.WriteLine("Enter your first name");
+            String firstName = Console.ReadLine();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].getFirstName().Equals(firstName))
+                {
+                    Console.WriteLine("No duplicate entry acceptable please enter valid name");
+                }
+            }
+        }
     }
 }
