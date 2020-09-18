@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AddressBook
 {
-    class AddressBookImpl : IAddressBook
+    class AddressBookImpl : IAddressBook, IComparer<Person>
     {
         Person person = null;
 
@@ -36,7 +36,6 @@ namespace AddressBook
         {
             throw new NotImplementedException();
         }
-
         public void display()
         {
             foreach (Person p in list)
@@ -48,7 +47,7 @@ namespace AddressBook
         {
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i].getFirstName().Equals(firstName))
+                if (list[i].FirstName.Equals(firstName))
                 {
 
                     Person person = list[i];
@@ -64,19 +63,19 @@ namespace AddressBook
 
                     Console.WriteLine("enter new city");
                     String city = Console.ReadLine();
-                    person.setCity(city);
+                    person.City=city;
 
                     Console.WriteLine("enter new state");
                     String state = Console.ReadLine();
-                    person.setState(state);
+                    person.State =(state);
 
                     Console.WriteLine("enter new phoneNo");
                     String phoneNo = Console.ReadLine();
-                    person.setMobileNo(phoneNo);
+                    person.PhoneNumber =phoneNo;
 
                     Console.WriteLine("enter new zipCode");
                     String zipCode = Console.ReadLine();
-                    person.setZipcode(zipCode);
+                    person.Zip =zipCode;
                 }
             }
         }
@@ -97,7 +96,7 @@ namespace AddressBook
             String firstName = Console.ReadLine();
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i].getFirstName().Equals(firstName))
+                if (list[i].FirstName.Equals(firstName))
                 {
                     Console.WriteLine("No duplicate entry acceptable please enter valid name");
                 }
@@ -122,7 +121,7 @@ namespace AddressBook
                 }
             }
         }
-        public void sortByName()
+        public void sorting()
         {
 
             list.Sort(this.Compare);
@@ -131,11 +130,21 @@ namespace AddressBook
 
         public int Compare(Person x, Person y)
         {
-            return x.getFirstName().CompareTo(y.getFirstName());
+            int option;
+            Console.WriteLine("Enter your choice: 1.sort by name   2.sort by city");
+            String read = Console.ReadLine();
+            option = Convert.ToInt32(read);
+            if(option ==1)
+                return x.FirstName.CompareTo(y.FirstName);
+            if (option == 2)
+                return x.City.CompareTo(y.City);
+            else return 0;
+         }
 
-        }
 
     }
 
-    }
+}
+
+    
 
