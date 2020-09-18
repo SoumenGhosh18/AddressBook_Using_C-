@@ -56,11 +56,11 @@ namespace AddressBook
 
                     Console.WriteLine("enter new last name");
                     String lastName = Console.ReadLine();
-                    person.setLastName(lastName);
+                    person.LastName = lastName;
 
                     Console.WriteLine("enter new address");
-                    String address = Console.ReadLine();
-                    person.setAddress(address);
+                    person.Address = Console.ReadLine();
+                   // person.setAddress(address);
 
                     Console.WriteLine("enter new city");
                     String city = Console.ReadLine();
@@ -84,7 +84,7 @@ namespace AddressBook
         {
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i].getFirstName().Equals(firstName))
+                if (list[i].FirstName.Equals(firstName))
                 {
                     list.Remove(person);
                 }
