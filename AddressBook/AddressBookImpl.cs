@@ -79,6 +79,12 @@ namespace AddressBook
                 }
             }
         }
+
+        internal void viewByCity(string @string, object city)
+        {
+            throw new NotImplementedException();
+        }
+
         public void deletePerson(String firstName)
         {
             for (int i = 0; i < list.Count; i++)
@@ -141,6 +147,15 @@ namespace AddressBook
             else return 0;
          }
 
+        public void viewByCity(String city)
+        {
+            for(int i=0;i<list.Count;i++)
+            {
+                if (list[i].City.Equals(city))
+                    Console.WriteLine(list[i]);
+            }
+
+        }
 
     }
 

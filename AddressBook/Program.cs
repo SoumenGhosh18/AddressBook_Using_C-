@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AddressBook
+namespace AddressBook 
 {
     class Program
     {
@@ -12,8 +12,8 @@ namespace AddressBook
                 Boolean check = true;
                 while (check == true)
                 {
-                    Console.WriteLine("1.Add person 2.Display person 3. Edit person 4.Delete person 5.Add multiple person" +
-                                        "6. sortByname");
+                    Console.WriteLine("1.Add_person 2.Display_person 3. Edit_person 4.Delete_person 5.Add_multiple person" +
+                                        "6. choose_sort_By 7.View_Person_By_City");
                     String read = Console.ReadLine();
                    int option = Convert.ToInt32(read);
 
@@ -44,7 +44,13 @@ namespace AddressBook
                     }
                     else if (option == 6)
                     {
-                        book.sortByName();
+                        book.sorting();
+                    }
+                    else if (option == 7)
+                    {
+                        Console.WriteLine("Enter the city");
+                        String city = Console.ReadLine();
+                        book.viewByCity(city);
                     }
 
 

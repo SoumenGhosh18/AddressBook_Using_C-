@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AddressBook
 {
-    class Sorting : IComparer
+   /* class Sorting : IComparer
     {
         public void sortByName()
         {
@@ -16,5 +16,5 @@ namespace AddressBook
             return x.getFirstName().CompareTo(y.getFirstName());
         
         }
-    }
+    }*/
 }

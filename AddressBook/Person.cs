@@ -22,7 +22,7 @@ namespace AddressBook
         public string Zip { get => zip; set => zip = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
-        /*   public Person(String firstName, String lastName, String address,
+           public Person(String firstName, String lastName, String address,
                          String city, String state, String zip, String phoneNumber)
            {
                this.firstName = firstName;
@@ -33,7 +33,7 @@ namespace AddressBook
                this.zip = zip;
                this.phoneNumber = phoneNumber;
            }
-
+        /*
            public String getFirstName()
            {
                return firstName;

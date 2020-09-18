@@ -11,6 +11,7 @@ namespace AddressBook
         public void edit(String firstName);
         public void deletePerson(String firstName);
         public void addMultiplePerson();
-        public void sortByName();
+        public void sorting();
+        public void viewByCity(String city);
     }
 }
