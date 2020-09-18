@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -100,7 +101,41 @@ namespace AddressBook
                 {
                     Console.WriteLine("No duplicate entry acceptable please enter valid name");
                 }
+                else
+                {
+                
+                    Console.WriteLine("Enter the Last Name");
+                    string lastName = Console.ReadLine();
+                    Console.WriteLine("Enter your Address");
+                    string address = Console.ReadLine();
+                    Console.WriteLine("Enter the City");
+                    string city = Console.ReadLine();
+                    Console.WriteLine("Enter the State");
+                    string state = Console.ReadLine();
+                    Console.WriteLine("Enter your Zip Code");
+                    string zip = Console.ReadLine();
+                    Console.WriteLine("Enter your phone number");
+                    string phoneNumber = Console.ReadLine();
+                    Person person = new Person(firstName, lastName, address, city, state, zip, phoneNumber);
+                    list.Add(person);
+
+                }
             }
         }
+        public void sortByName()
+        {
+
+            list.Sort(this.Compare);
+            this.display();
+        }
+
+        public int Compare(Person x, Person y)
+        {
+            return x.getFirstName().CompareTo(y.getFirstName());
+
+        }
+
     }
-}
+
+    }
+

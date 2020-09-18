@@ -8,7 +8,7 @@ namespace AddressBook
         {
             Console.WriteLine("Welcome To AddressBook Management program.....");
             {
-                IAddressBook book = new AddressBookImpl();
+                AddressBookImpl book = new AddressBookImpl();
                 Boolean check = true;
                 while (check == true)
                 {
